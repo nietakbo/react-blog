@@ -1,4 +1,5 @@
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SinglePost = props => {
   return (
@@ -12,7 +13,7 @@ const SinglePost = props => {
           <br />
           {props.shortDescription}
         </Card.Text>
-        <Button href={`/post/${props.id}`} variant='primary'>
+        <Button as={Link} to={`/post/${props.id}`} variant='primary'>
           Read more
         </Button>
       </Card.Body>
