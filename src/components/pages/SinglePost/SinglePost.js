@@ -1,6 +1,6 @@
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import dateToView from '../../../utils/dateToView';
 const SinglePost = props => {
   return (
     <Card style={{ width: '25rem' }} className='m-3'>
@@ -9,7 +9,9 @@ const SinglePost = props => {
         <Card.Text>
           <b>Author:</b> {props.author}
           <br />
-          <b>Published:</b> {props.publishedDate}
+          <b>Published:</b> {dateToView(props.publishedDate)}
+          <br />
+          <b>Category:</b> {props.category}
           <br />
           {props.shortDescription}
         </Card.Text>

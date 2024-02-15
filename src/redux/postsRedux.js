@@ -1,7 +1,14 @@
+import categoryPathFormat from '../utils/categoryPathFormat';
 import shortid from 'shortid';
+import { createSelector} from '@reduxjs/toolkit';
 //selectors
 export const getAllPosts = state => state.posts;
 export const getPostById = ({ posts }, postId) => posts.find(post => post.id === postId);
+const selectPostCategory = (state, category) => category;
+export const getPostsByCategory = createSelector(
+  [getAllPosts, selectPostCategory],
+  (posts, category) => posts.filter(post => post.category === category.name)
+);
 // actions
 const createActionName = actionName => `app/posts/${actionName}`;
 const REMOVE_POST = createActionName('REMOVE_POST');

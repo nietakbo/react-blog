@@ -22,6 +22,7 @@ const EditPostForm = () => {
       publishedDate={post.publishedDate}
       shortDescription={post.shortDescription}
       content={post.content}
+      category={post.category}
     />
   );
 };
